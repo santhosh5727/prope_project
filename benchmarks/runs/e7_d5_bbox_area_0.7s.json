@@ -1,0 +1,105 @@
+{
+ "meta": {
+  "name": "e7_d5_bbox_area_0.7s",
+  "overrides": {
+   "objective": "min_bbox_area",
+   "time_limit_s": 0.7
+  },
+  "n": 6,
+  "cpu_count": 2,
+  "ortools": "9.15.6755",
+  "python": "3.13.16",
+  "caveat": "evidence for this machine/Python/OR-Tools build only"
+ },
+ "cases": [
+  {
+   "index": 9,
+   "case": "random n=8 24x16 seed=1",
+   "same_process": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.703,
+    "wall_max": 0.704,
+    "wall_spread_pct": 0.1,
+    "hashes": [
+     "None"
+    ]
+   },
+   "fresh_processes": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.543,
+    "wall_max": 0.67,
+    "wall_spread_pct": 23.4,
+    "hashes": [
+     "None"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": null,
+    "solver_status": "UNKNOWN",
+    "wall_s": 0.704
+   }
+  },
+  {
+   "index": 12,
+   "case": "random n=8 24x16 seed=4",
+   "same_process": {
+    "n": 6,
+    "distinct_layout_hashes": 6,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "FEASIBLE"
+    ],
+    "wall_min": 0.702,
+    "wall_max": 0.704,
+    "wall_spread_pct": 0.3,
+    "hashes": [
+     "0e56c0e018173078",
+     "541a503a82662edc",
+     "68cdb16b71e74771",
+     "d22c3beb2740754d",
+     "ee533497e6c7e240",
+     "f08bcc8a9c35a6b0"
+    ]
+   },
+   "fresh_processes": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.702,
+    "wall_max": 0.707,
+    "wall_spread_pct": 0.7,
+    "hashes": [
+     "None"
+    ]
+   },
+   "all_hashes_equal_across_both": false,
+   "seed2": {
+    "layout_hash": null,
+    "solver_status": "UNKNOWN",
+    "wall_s": 0.702
+   }
+  }
+ ]
+}

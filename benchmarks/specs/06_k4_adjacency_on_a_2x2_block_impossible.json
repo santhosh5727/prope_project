@@ -1,0 +1,60 @@
+{
+ "adjacency": [
+  {
+   "a": "A",
+   "b": "B",
+   "id": "ADJ-01"
+  },
+  {
+   "a": "A",
+   "b": "C",
+   "id": "ADJ-02"
+  },
+  {
+   "a": "A",
+   "b": "D",
+   "id": "ADJ-03"
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "id": "ADJ-04"
+  },
+  {
+   "a": "B",
+   "b": "D",
+   "id": "ADJ-05"
+  },
+  {
+   "a": "C",
+   "b": "D",
+   "id": "ADJ-06"
+  }
+ ],
+ "building": {
+  "height_m": 10,
+  "width_m": 10
+ },
+ "rooms": [
+  {
+   "area_m2": 25,
+   "id": "A",
+   "min_dim_m": 5.0
+  },
+  {
+   "area_m2": 25,
+   "id": "B",
+   "min_dim_m": 5.0
+  },
+  {
+   "area_m2": 25,
+   "id": "C",
+   "min_dim_m": 5.0
+  },
+  {
+   "area_m2": 25,
+   "id": "D",
+   "min_dim_m": 5.0
+  }
+ ]
+}

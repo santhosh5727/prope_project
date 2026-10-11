@@ -1,0 +1,89 @@
+{
+ "provenance": "HELD-OUT specs, new seeds 101-114, same generator as benchmarks/compare_generators.random_case",
+ "specs": [
+  {
+   "index": 101,
+   "case": "random n=8 24x16 seed=101",
+   "file": "101_n8_24x16.json",
+   "sha256": "426ac378a2a276219f55d9a786bb80dbf3ab0747c6497042857b055e361eed40"
+  },
+  {
+   "index": 102,
+   "case": "random n=8 24x16 seed=102",
+   "file": "102_n8_24x16.json",
+   "sha256": "02cce99ba6c7af916207d929f78e7b476edbddfcac2436a0cbf67c7de586870c"
+  },
+  {
+   "index": 103,
+   "case": "random n=8 24x16 seed=103",
+   "file": "103_n8_24x16.json",
+   "sha256": "e9d0bebb64a8def1b9074eb4bd046af7f0ee294f406201193968c1143a3c60e1"
+  },
+  {
+   "index": 104,
+   "case": "random n=12 30x24 seed=104",
+   "file": "104_n12_30x24.json",
+   "sha256": "125762f9af8bf371f9221e217209a2a2d13cc7599f53422ad8985f8224f34da1"
+  },
+  {
+   "index": 105,
+   "case": "random n=12 30x24 seed=105",
+   "file": "105_n12_30x24.json",
+   "sha256": "22c88fee29d920b5afe92d28ba35ef1547384c8eb1f25a721a17f5784dfe24f2"
+  },
+  {
+   "index": 106,
+   "case": "random n=12 30x24 seed=106",
+   "file": "106_n12_30x24.json",
+   "sha256": "3db25416c0ffbbf40987ec9add827a06ddc475d5c603481336c24a2e03aeca0f"
+  },
+  {
+   "index": 107,
+   "case": "random n=12 30x24 seed=107",
+   "file": "107_n12_30x24.json",
+   "sha256": "2a5dcf1b05ceebcf763c3f6a39dd2bfbb2c9aba58e1bf06c9e6acb805c6f092e"
+  },
+  {
+   "index": 108,
+   "case": "random n=20 36x24 seed=108",
+   "file": "108_n20_36x24.json",
+   "sha256": "949afaf6e3e317b799de4a623b0d78b70aae4d1adeb774e07df32507ca418cae"
+  },
+  {
+   "index": 109,
+   "case": "random n=20 36x24 seed=109",
+   "file": "109_n20_36x24.json",
+   "sha256": "a53f5e43fe0b3e6f06bac4fb15f0bdac34aa36b17137198bab0e80785b13476d"
+  },
+  {
+   "index": 110,
+   "case": "random n=20 36x24 seed=110",
+   "file": "110_n20_36x24.json",
+   "sha256": "ff1acbf01a640af0714d81fd96d41fa9c5b7eb1598b7e23191a17d5ec5a8c241"
+  },
+  {
+   "index": 111,
+   "case": "random n=20 36x24 seed=111",
+   "file": "111_n20_36x24.json",
+   "sha256": "51d28f4d98a3ab8791412c40a7483316b2ef7b4b1f2291bbd4a51d942db3de25"
+  },
+  {
+   "index": 112,
+   "case": "random n=30 30x24 seed=112",
+   "file": "112_n30_30x24.json",
+   "sha256": "448905668fe298f4dd55254d142f593f6dd6675dc056318a9041401d62132256"
+  },
+  {
+   "index": 113,
+   "case": "random n=30 30x24 seed=113",
+   "file": "113_n30_30x24.json",
+   "sha256": "7ec070149bda0db8481a9aa7269b61157e012e607a322b8425a31e08edacfe7c"
+  },
+  {
+   "index": 114,
+   "case": "random n=30 30x24 seed=114",
+   "file": "114_n30_30x24.json",
+   "sha256": "c42f6384a571f81f3b5d4917036676a9f19720ae43287b7064a530dd468b1dae"
+  }
+ ]
+}

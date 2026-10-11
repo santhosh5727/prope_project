@@ -1,0 +1,100 @@
+{
+ "meta": {
+  "name": "e7_d2_bbox_area_5s",
+  "overrides": {
+   "objective": "min_bbox_area",
+   "time_limit_s": 5
+  },
+  "n": 5,
+  "cpu_count": 2,
+  "ortools": "9.15.6755",
+  "python": "3.13.16",
+  "caveat": "evidence for this machine/Python/OR-Tools build only"
+ },
+ "cases": [
+  {
+   "index": 9,
+   "case": "random n=8 24x16 seed=1",
+   "same_process": {
+    "n": 5,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "FEASIBLE"
+    ],
+    "wall_min": 5.003,
+    "wall_max": 5.005,
+    "wall_spread_pct": 0.0,
+    "hashes": [
+     "deb089e30261b9c8"
+    ]
+   },
+   "fresh_processes": {
+    "n": 5,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "FEASIBLE"
+    ],
+    "wall_min": 5.004,
+    "wall_max": 5.016,
+    "wall_spread_pct": 0.2,
+    "hashes": [
+     "deb089e30261b9c8"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": "2385645281fafdff",
+    "solver_status": "FEASIBLE",
+    "wall_s": 5.003
+   }
+  },
+  {
+   "index": 11,
+   "case": "random n=8 24x16 seed=3",
+   "same_process": {
+    "n": 5,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "FEASIBLE"
+    ],
+    "wall_min": 5.002,
+    "wall_max": 5.004,
+    "wall_spread_pct": 0.0,
+    "hashes": [
+     "02fce65746d18a90"
+    ]
+   },
+   "fresh_processes": {
+    "n": 5,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "FEASIBLE"
+    ],
+    "wall_min": 5.002,
+    "wall_max": 5.003,
+    "wall_spread_pct": 0.0,
+    "hashes": [
+     "02fce65746d18a90"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": "8b2dce2650db303e",
+    "solver_status": "FEASIBLE",
+    "wall_s": 5.003
+   }
+  }
+ ]
+}

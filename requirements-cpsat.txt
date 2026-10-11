@@ -1,0 +1,5 @@
+# Optional dependency: only needed for the CP-SAT generator (method "cpsat").
+# The application, the heuristic baseline and the validator are standard-library only.
+#   python3 -m venv .venv && ./.venv/bin/pip install -r requirements-cpsat.txt
+# Version pinned to the one the tests/benchmarks in README.md were run with (Python 3.13).
+ortools==9.15.6755

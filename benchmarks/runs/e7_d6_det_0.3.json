@@ -1,0 +1,101 @@
+{
+ "meta": {
+  "name": "e7_d6_det_0.3",
+  "overrides": {
+   "objective": "min_bbox_area",
+   "time_limit_s": 60,
+   "deterministic_time_limit_s": 0.3
+  },
+  "n": 6,
+  "cpu_count": 2,
+  "ortools": "9.15.6755",
+  "python": "3.13.16",
+  "caveat": "evidence for this machine/Python/OR-Tools build only"
+ },
+ "cases": [
+  {
+   "index": 9,
+   "case": "random n=8 24x16 seed=1",
+   "same_process": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.172,
+    "wall_max": 0.21,
+    "wall_spread_pct": 22.1,
+    "hashes": [
+     "None"
+    ]
+   },
+   "fresh_processes": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.481,
+    "wall_max": 0.603,
+    "wall_spread_pct": 25.4,
+    "hashes": [
+     "None"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": null,
+    "solver_status": "UNKNOWN",
+    "wall_s": 0.202
+   }
+  },
+  {
+   "index": 12,
+   "case": "random n=8 24x16 seed=4",
+   "same_process": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.212,
+    "wall_max": 0.294,
+    "wall_spread_pct": 38.7,
+    "hashes": [
+     "None"
+    ]
+   },
+   "fresh_processes": {
+    "n": 6,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "UNKNOWN"
+    ],
+    "distinct_raw_status": [
+     "UNKNOWN"
+    ],
+    "wall_min": 0.505,
+    "wall_max": 0.745,
+    "wall_spread_pct": 47.5,
+    "hashes": [
+     "None"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": null,
+    "solver_status": "UNKNOWN",
+    "wall_s": 0.269
+   }
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "title": "SYNTHETIC DEMO (30 x 16 m variant) - illustrative non-sterile solid-dose block",
+    "label": "All values are synthetic demonstration inputs. They are NOT real pharmaceutical engineering standards, NOT a real facility, and NOT construction-ready."
+  },
+  "building": {
+    "width_m": 30,
+    "height_m": 16,
+    "source": "synthetic_demo"
+  },
+  "tolerances": {
+    "area_rel_tol": 0.02,
+    "min_shared_edge_m": 1.0,
+    "geom_eps_m": 1e-06,
+    "source": "assumption"
+  },
+  "rooms": [
+    {
+      "id": "MAL_IN",
+      "name": "Material airlock (in)",
+      "area_m2": 9,
+      "min_dim_m": 2.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "PAL",
+      "name": "Personnel airlock",
+      "area_m2": 12,
+      "min_dim_m": 2.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "STG_IN",
+      "name": "Staging / quarantine",
+      "area_m2": 30,
+      "min_dim_m": 3.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "DISP",
+      "name": "Dispensing",
+      "area_m2": 24,
+      "min_dim_m": 3.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "GRAN",
+      "name": "Granulation and drying",
+      "area_m2": 45,
+      "min_dim_m": 4.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "MILL",
+      "name": "Milling",
+      "area_m2": 16,
+      "min_dim_m": 2.5,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "BLEND",
+      "name": "Blending",
+      "area_m2": 30,
+      "min_dim_m": 3.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "COMP",
+      "name": "Compression",
+      "area_m2": 25,
+      "min_dim_m": 3.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "COAT",
+      "name": "Coating",
+      "area_m2": 30,
+      "min_dim_m": 3.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "WASH",
+      "name": "Equipment wash",
+      "area_m2": 20,
+      "min_dim_m": 2.5,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "CLEAN_EQ",
+      "name": "Clean equipment store",
+      "area_m2": 15,
+      "min_dim_m": 2.5,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "STG_OUT",
+      "name": "Bulk-out staging",
+      "area_m2": 20,
+      "min_dim_m": 3.0,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "WASTE",
+      "name": "Waste out",
+      "area_m2": 8,
+      "min_dim_m": 1.5,
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "IPC",
+      "name": "In-process lab",
+      "area_m2": 12,
+      "min_dim_m": 2.0,
+      "source": "synthetic_demo"
+    }
+  ],
+  "adjacency": [
+    {
+      "id": "ADJ-01",
+      "a": "MAL_IN",
+      "b": "STG_IN",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-02",
+      "a": "STG_IN",
+      "b": "DISP",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-03",
+      "a": "DISP",
+      "b": "GRAN",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-04",
+      "a": "GRAN",
+      "b": "MILL",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-05",
+      "a": "MILL",
+      "b": "BLEND",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-06",
+      "a": "BLEND",
+      "b": "COMP",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-07",
+      "a": "COMP",
+      "b": "COAT",
+      "source": "synthetic_demo"
+    },
+    {
+      "id": "ADJ-08",
+      "a": "WASH",
+      "b": "CLEAN_EQ",
+      "source": "synthetic_demo"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+ "adjacency": [
+  {
+   "a": "MAL_IN",
+   "b": "STG_IN",
+   "id": "ADJ-01",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "STG_IN",
+   "b": "DISP",
+   "id": "ADJ-02",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "DISP",
+   "b": "GRAN",
+   "id": "ADJ-03",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "GRAN",
+   "b": "MILL",
+   "id": "ADJ-04",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "MILL",
+   "b": "BLEND",
+   "id": "ADJ-05",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "BLEND",
+   "b": "COMP",
+   "id": "ADJ-06",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "COMP",
+   "b": "COAT",
+   "id": "ADJ-07",
+   "source": "synthetic_demo"
+  },
+  {
+   "a": "WASH",
+   "b": "CLEAN_EQ",
+   "id": "ADJ-08",
+   "source": "synthetic_demo"
+  }
+ ],
+ "building": {
+  "height_m": 16,
+  "source": "synthetic_demo",
+  "width_m": 19
+ },
+ "meta": {
+  "label": "All values are synthetic demonstration inputs. They are NOT real pharmaceutical engineering standards, NOT a real facility, and NOT construction-ready.",
+  "title": "SYNTHETIC DEMO - illustrative non-sterile solid-dose block"
+ },
+ "rooms": [
+  {
+   "area_m2": 9,
+   "id": "MAL_IN",
+   "min_dim_m": 2.0,
+   "name": "Material airlock (in)",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 12,
+   "id": "PAL",
+   "min_dim_m": 2.0,
+   "name": "Personnel airlock",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 30,
+   "id": "STG_IN",
+   "min_dim_m": 3.0,
+   "name": "Staging / quarantine",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 24,
+   "id": "DISP",
+   "min_dim_m": 3.0,
+   "name": "Dispensing",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 45,
+   "id": "GRAN",
+   "min_dim_m": 4.0,
+   "name": "Granulation and drying",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 16,
+   "id": "MILL",
+   "min_dim_m": 2.5,
+   "name": "Milling",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 30,
+   "id": "BLEND",
+   "min_dim_m": 3.0,
+   "name": "Blending",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 25,
+   "id": "COMP",
+   "min_dim_m": 3.0,
+   "name": "Compression",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 30,
+   "id": "COAT",
+   "min_dim_m": 3.0,
+   "name": "Coating",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 20,
+   "id": "WASH",
+   "min_dim_m": 2.5,
+   "name": "Equipment wash",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 15,
+   "id": "CLEAN_EQ",
+   "min_dim_m": 2.5,
+   "name": "Clean equipment store",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 20,
+   "id": "STG_OUT",
+   "min_dim_m": 3.0,
+   "name": "Bulk-out staging",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 8,
+   "id": "WASTE",
+   "min_dim_m": 1.5,
+   "name": "Waste out",
+   "source": "synthetic_demo"
+  },
+  {
+   "area_m2": 12,
+   "id": "IPC",
+   "min_dim_m": 2.0,
+   "name": "In-process lab",
+   "source": "synthetic_demo"
+  }
+ ],
+ "tolerances": {
+  "area_rel_tol": 0.02,
+  "geom_eps_m": 1e-06,
+  "min_shared_edge_m": 1.0,
+  "source": "assumption"
+ }
+}

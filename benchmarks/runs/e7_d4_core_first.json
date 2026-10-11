@@ -1,0 +1,59 @@
+{
+ "meta": {
+  "name": "e7_d4_core_first",
+  "overrides": {
+   "model_options": [
+    "core_first"
+   ]
+  },
+  "n": 3,
+  "cpu_count": 2,
+  "ortools": "9.15.6755",
+  "python": "3.13.16",
+  "caveat": "evidence for this machine/Python/OR-Tools build only"
+ },
+ "cases": [
+  {
+   "index": 15,
+   "case": "random n=12 30x24 seed=7",
+   "same_process": {
+    "n": 3,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "INFEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "INFEASIBLE"
+    ],
+    "wall_min": 2.744,
+    "wall_max": 2.943,
+    "wall_spread_pct": 7.3,
+    "hashes": [
+     "None"
+    ]
+   },
+   "fresh_processes": {
+    "n": 3,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "INFEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "INFEASIBLE"
+    ],
+    "wall_min": 3.137,
+    "wall_max": 3.24,
+    "wall_spread_pct": 3.3,
+    "hashes": [
+     "None"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": null,
+    "solver_status": "INFEASIBLE",
+    "wall_s": 2.716
+   }
+  }
+ ]
+}

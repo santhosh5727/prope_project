@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "name": "e7_d3_base_60s",
+  "overrides": {
+   "time_limit_s": 60
+  },
+  "n": 2,
+  "cpu_count": 2,
+  "ortools": "9.15.6755",
+  "python": "3.13.16",
+  "caveat": "evidence for this machine/Python/OR-Tools build only"
+ },
+ "cases": [
+  {
+   "index": 0,
+   "case": "demo 24x16 (chain adjacency)",
+   "same_process": {
+    "n": 2,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "OPTIMAL"
+    ],
+    "wall_min": 1.87,
+    "wall_max": 2.037,
+    "wall_spread_pct": 8.9,
+    "hashes": [
+     "6b8eb56129008854"
+    ]
+   },
+   "fresh_processes": {
+    "n": 2,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "OPTIMAL"
+    ],
+    "wall_min": 2.136,
+    "wall_max": 2.245,
+    "wall_spread_pct": 5.1,
+    "hashes": [
+     "6b8eb56129008854"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": "7e57c632a557847b",
+    "solver_status": "FEASIBLE",
+    "wall_s": 1.265
+   }
+  },
+  {
+   "index": 9,
+   "case": "random n=8 24x16 seed=1",
+   "same_process": {
+    "n": 2,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "OPTIMAL"
+    ],
+    "wall_min": 0.834,
+    "wall_max": 0.878,
+    "wall_spread_pct": 5.3,
+    "hashes": [
+     "b62c298c5f96a7b9"
+    ]
+   },
+   "fresh_processes": {
+    "n": 2,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "OPTIMAL"
+    ],
+    "wall_min": 1.212,
+    "wall_max": 1.295,
+    "wall_spread_pct": 6.8,
+    "hashes": [
+     "b62c298c5f96a7b9"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": "8218232ac765d723",
+    "solver_status": "FEASIBLE",
+    "wall_s": 1.07
+   }
+  },
+  {
+   "index": 14,
+   "case": "random n=12 30x24 seed=6",
+   "same_process": {
+    "n": 2,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "OPTIMAL"
+    ],
+    "wall_min": 1.424,
+    "wall_max": 1.43,
+    "wall_spread_pct": 0.4,
+    "hashes": [
+     "697e0c0ef697c36a"
+    ]
+   },
+   "fresh_processes": {
+    "n": 2,
+    "distinct_layout_hashes": 1,
+    "distinct_solver_status": [
+     "FEASIBLE"
+    ],
+    "distinct_raw_status": [
+     "OPTIMAL"
+    ],
+    "wall_min": 1.603,
+    "wall_max": 1.612,
+    "wall_spread_pct": 0.6,
+    "hashes": [
+     "697e0c0ef697c36a"
+    ]
+   },
+   "all_hashes_equal_across_both": true,
+   "seed2": {
+    "layout_hash": "710d003c33d9b221",
+    "solver_status": "FEASIBLE",
+    "wall_s": 1.345
+   }
+  }
+ ]
+}

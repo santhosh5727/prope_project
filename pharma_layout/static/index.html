@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pharma layout MVP - requirements to validated 2D layout</title>
+<style>
+/*__CSS__*/
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:12px 20px;border-bottom:1px solid var(--line)}
+header h1{margin:0;font-size:17px}
+.synthetic{background:var(--warnbg);border-bottom:1px solid var(--warn);padding:6px 20px;font-size:13px}
+main{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:20px;padding:16px 20px;align-items:start}
+@media(max-width:900px){main{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--card)}
+.panel h2{margin:0 0 8px;font-size:14px}
+label{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+input[type=number],input[type=text]{width:100%;box-sizing:border-box;padding:5px 7px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--fg);font:inherit}
+input.user{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+table.form{width:100%;border-collapse:collapse;font-size:12px}
+table.form td,table.form th{padding:3px 4px;text-align:left}
+table.form input{padding:3px 5px}
+button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);cursor:pointer}
+button.primary{background:var(--acc);border-color:var(--acc);color:#fff}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.errors{background:var(--badbg);border:1px solid var(--bad);border-radius:8px;padding:10px 14px}
+.errors ul{margin:6px 0 0 18px;padding:0}
+textarea{width:100%;box-sizing:border-box;height:200px;font:12px ui-monospace,Menlo,monospace;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px}
+details{margin-top:10px}
+#status{font-size:12px;color:var(--muted);margin-left:4px;align-self:center}
+select{width:100%;box-sizing:border-box;padding:5px 7px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--fg);font:inherit}
+select.user{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.gnote{font-size:12px;color:var(--muted);margin-top:4px}
+ol.flow{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:6px 0 0;padding:0;counter-reset:s}
+ol.flow li{counter-increment:s;border:1px solid var(--acc);border-radius:14px;padding:2px 10px;font-size:12px}
+ol.flow li::before{content:counter(s) ". ";color:var(--muted)}
+</style>
+</head>
+<body>
+<header><h1>Conceptual design &amp; indicative costing — synthetic oral-solid-dose (OSD) facility</h1>
+<ol class="flow"><li>Facility brief</li><li>Generate alternatives</li><li>Compare &amp; select</li><li>Validate</li><li>Estimate cost</li><li>View report</li></ol>
+<div class="gnote">Steps 1: left panel. Steps 2–6: press <b>Compare alternatives &amp; estimate cost</b>. AI/LLM brief intake is <b>future work</b> - no LLM is connected; input is structured.</div></header>
+<div class="synthetic" id="label">Loading…</div>
+<main>
+  <section>
+    <div class="panel">
+      <h2>Building</h2>
+      <div class="two">
+        <div><label for="bw">Width (m)</label><input id="bw" type="number" step="0.5" min="0"></div>
+        <div><label for="bh">Height (m)</label><input id="bh" type="number" step="0.5" min="0"></div>
+      </div>
+      <div class="two">
+        <div><label for="tolA">Area tolerance (± %)</label><input id="tolA" type="number" step="0.5" min="0"></div>
+        <div><label for="tolE">Min shared edge for adjacency (m)</label><input id="tolE" type="number" step="0.1" min="0"></div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:12px">
+      <h2>Generator</h2>
+      <label for="gm">Method</label>
+      <select id="gm"><option value="heuristic">Row-packing baseline (standard library)</option><option value="cpsat">CP-SAT (OR-Tools)</option></select>
+      <div id="gnote" class="gnote"></div>
+      <div id="cpopts">
+        <div class="two">
+          <div><label for="gg">Grid (m)</label><input id="gg" type="number" step="0.05" min="0.01" max="1"></div>
+          <div><label for="gt">Time limit (s)</label><input id="gt" type="number" step="1" min="0.01" max="120"></div>
+        </div>
+        <label for="go">Objective</label>
+        <select id="go"><option value="feasibility">Feasibility only (fast; areas anywhere inside the tolerance)</option><option value="min_area_deviation">Minimise area deviation (slower)</option><option value="min_bbox_perimeter">Compact: minimise bounding-box width + height (runs to the time limit)</option><option value="min_bbox_area">Compact: minimise bounding-box area (runs to the time limit)</option></select>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:12px">
+      <h2>Rooms</h2>
+      <table class="form"><thead><tr><th>ID</th><th>Area m²</th><th>Min dim m</th><th></th></tr></thead><tbody id="rooms"></tbody></table>
+    </div>
+    <div class="panel" style="margin-top:12px">
+      <h2>Adjacency requirements</h2>
+      <div id="adj"></div>
+    </div>
+    <div class="row">
+      <button class="primary" id="alts">Compare alternatives &amp; estimate cost</button>
+      <button id="run">Generate &amp; validate (single)</button>
+      <button id="reset">Reset to synthetic example</button>
+      <span id="status"></span>
+    </div>
+    <details>
+      <summary>Raw spec JSON (advanced)</summary>
+      <textarea id="json" spellcheck="false"></textarea>
+      <div class="row"><button id="apply">Apply JSON</button></div>
+    </details>
+    <p class="note" style="font-size:12px;color:var(--muted)">Blue-outlined fields were changed by you and are tagged
+    <i>user-provided</i> in the report. Everything else is a synthetic demonstration value.</p>
+  </section>
+  <section><div id="alt" aria-live="polite"></div><div id="out" aria-live="polite"></div></section>
+</main>
+<script>
+"use strict";
+let spec = null, timer = null, seq = 0, caps = {cpsat: false};
+const GEN_DEFAULTS = {method: "heuristic", grid_m: 0.1, time_limit_s: 20, objective: "feasibility"};
+const $ = (id) => document.getElementById(id);
+
+function num(v) { const x = parseFloat(v); return Number.isFinite(x) ? x : null; }
+function el(tag, props, ...kids) {
+  const e = document.createElement(tag);
+  Object.assign(e, props || {});
+  kids.forEach(k => e.append(k));
+  return e;
+}
+function markUser(input, obj) { obj.source = "user"; input.classList.add("user"); schedule(); }
+
+function render() {
+  $("label").textContent = (spec.meta && spec.meta.label) || "";
+  $("bw").value = spec.building.width_m ?? "";
+  $("bh").value = spec.building.height_m ?? "";
+  const t = spec.tolerances || (spec.tolerances = {});
+  $("tolA").value = t.area_rel_tol != null ? +(t.area_rel_tol * 100).toFixed(4) : "";
+  $("tolE").value = t.min_shared_edge_m ?? "";
+  const g = spec.generator || (spec.generator = {});
+  $("gm").value = g.method ?? GEN_DEFAULTS.method;
+  $("gg").value = g.grid_m ?? GEN_DEFAULTS.grid_m;
+  $("gt").value = g.time_limit_s ?? GEN_DEFAULTS.time_limit_s;
+  $("go").value = g.objective ?? GEN_DEFAULTS.objective;
+  $("cpopts").style.display = $("gm").value === "cpsat" ? "" : "none";
+  $("gnote").textContent = caps.cpsat ? (`OR-Tools ${caps.ortools_version} available.`) : (caps.reason || "");
+  // Outlines mirror the data: a form rebuild must not drop provenance that is still in the spec.
+  const uf = new Set(t.user_fields || []), gf = new Set(g.user_fields || []);
+  const mark = (id, on) => $(id).classList.toggle("user", !!on);
+  mark("bw", spec.building.source === "user"); mark("bh", spec.building.source === "user");
+  mark("tolA", uf.has("area_rel_tol")); mark("tolE", uf.has("min_shared_edge_m"));
+  mark("gm", gf.has("method")); mark("gg", gf.has("grid_m")); mark("gt", gf.has("time_limit_s")); mark("go", gf.has("objective"));
+
+  const tb = $("rooms"); tb.replaceChildren();
+  spec.rooms.forEach((r, i) => {
+    const area = el("input", {type: "number", step: "1", min: "0", value: r.area_m2 ?? ""});
+    const md = el("input", {type: "number", step: "0.5", min: "0", value: r.min_dim_m ?? ""});
+    if (r.source === "user") { area.classList.add("user"); md.classList.add("user"); }
+    area.addEventListener("input", () => { r.area_m2 = num(area.value); markUser(area, r); });
+    md.addEventListener("input", () => { r.min_dim_m = num(md.value); markUser(md, r); });
+    const rm = el("button", {type: "button", title: "Remove room and its adjacency requirements", textContent: "✕"});
+    rm.addEventListener("click", () => {
+      spec.rooms.splice(i, 1);
+      spec.adjacency = spec.adjacency.filter(a => a.a !== r.id && a.b !== r.id);
+      render(); schedule();
+    });
+    const idc = el("td", {title: r.name}); idc.textContent = r.id;
+    tb.append(el("tr", {}, idc, el("td", {}, area), el("td", {}, md), el("td", {}, rm)));
+  });
+
+  const ad = $("adj"); ad.replaceChildren();
+  spec.adjacency.forEach((a, i) => {
+    const cb = el("input", {type: "checkbox", checked: true});
+    const lab = el("label", {style: "display:flex;gap:6px;align-items:center;color:inherit;font-size:13px"});
+    cb.addEventListener("change", () => {
+      if (!cb.checked) { spec.adjacency.splice(i, 1); render(); schedule(); }
+    });
+    lab.append(cb, `${a.id}: ${a.a} ↔ ${a.b}`);
+    ad.append(lab);
+  });
+  $("json").value = JSON.stringify(spec, null, 2);
+}
+
+function schedule() {
+  clearTimeout(timer);
+  const slow = spec && spec.generator && spec.generator.method === "cpsat";
+  timer = setTimeout(run, slow ? 900 : 350);   // CP-SAT can take seconds: wait for the user to stop typing
+}
+
+async function runAlts() {
+  const mine = ++seq;
+  $("status").textContent = "solving 3 candidates in parallel (about 15 s)…";
+  $("json").value = JSON.stringify(spec, null, 2);
+  $("alts").disabled = true;
+  let data;
+  try {
+    const resp = await fetch("/api/alternatives", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(spec)});
+    data = await resp.json();
+  } catch (e) {
+    $("alt").replaceChildren(el("div", {className: "errors", textContent: "Request failed: " + e}));
+    $("status").textContent = ""; $("alts").disabled = false; return;
+  }
+  $("alts").disabled = false;
+  if (mine !== seq) return;
+  $("status").textContent = "";
+  if (!data.ok) {
+    const ul = el("ul"); (data.errors || [data.error || "unknown error"]).forEach(m => ul.append(el("li", {textContent: m})));
+    $("alt").replaceChildren(el("div", {className: "errors"}, el("b", {textContent: "Nothing was generated:"}), ul));
+    return;
+  }
+  $("out").replaceChildren();
+  $("alt").innerHTML = data.html; // HTML is escaped server-side (alternatives.py / report.py)
+}
+
+async function run() {
+  const mine = ++seq;
+  $("alt").replaceChildren();
+  const slow = spec.generator && spec.generator.method === "cpsat";
+  $("status").textContent = slow ? "solving with CP-SAT (may take several seconds)…" : "running…";
+  $("json").value = JSON.stringify(spec, null, 2);
+  let data;
+  try {
+    const resp = await fetch("/api/run", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(spec)});
+    data = await resp.json();
+  } catch (e) {
+    $("out").replaceChildren(el("div", {className: "errors", textContent: "Request failed: " + e}));
+    $("status").textContent = ""; return;
+  }
+  if (mine !== seq) return; // a newer run superseded this one
+  $("status").textContent = "";
+  if (!data.ok) {
+    const ul = el("ul"); data.errors.forEach(m => ul.append(el("li", {textContent: m})));
+    $("out").replaceChildren(el("div", {className: "errors"}, el("b", {textContent: "Input rejected - nothing was generated:"}), ul));
+    return;
+  }
+  $("out").innerHTML = data.html; // HTML is escaped server-side (report.py)
+}
+
+async function loadExample() {
+  try { caps = await (await fetch("/api/capabilities")).json(); } catch (e) { caps = {cpsat: false, reason: "capabilities unavailable"}; }
+  spec = await (await fetch("/api/example")).json();
+  // Reset restores defaults: CP-SAT when this server can run it, otherwise the baseline. Not a user edit.
+  spec.generator = {method: caps.cpsat ? "cpsat" : "heuristic", source: "assumption"};
+  render(); run();
+}
+
+for (const [id, set] of [
+  ["bw", v => spec.building.width_m = v], ["bh", v => spec.building.height_m = v],
+]) $(id).addEventListener("input", e => { set(num(e.target.value)); markUser(e.target, spec.building); });
+// Tolerances are tracked per field, so editing one does not relabel the others as user-provided.
+function markTol(input, key) {
+  const t = spec.tolerances;
+  t.user_fields = Array.from(new Set([...(t.user_fields || []), key]));
+  input.classList.add("user"); schedule();
+}
+$("tolA").addEventListener("input", e => { const v = num(e.target.value); spec.tolerances.area_rel_tol = v === null ? null : v / 100; markTol(e.target, "area_rel_tol"); });
+$("tolE").addEventListener("input", e => { spec.tolerances.min_shared_edge_m = num(e.target.value); markTol(e.target, "min_shared_edge_m"); });
+function markGen(input, key, value) {
+  const g = spec.generator || (spec.generator = {});
+  g[key] = value;
+  g.user_fields = Array.from(new Set([...(g.user_fields || []), key]));
+  input.classList.add("user"); schedule();
+}
+$("gm").addEventListener("change", e => {
+  if (e.target.value === "cpsat" && !caps.cpsat) { e.target.value = "heuristic"; $("gnote").textContent = caps.reason || "CP-SAT is not available."; return; }
+  markGen(e.target, "method", e.target.value); $("cpopts").style.display = e.target.value === "cpsat" ? "" : "none";
+});
+$("gg").addEventListener("input", e => markGen(e.target, "grid_m", num(e.target.value)));
+$("gt").addEventListener("input", e => markGen(e.target, "time_limit_s", num(e.target.value)));
+$("go").addEventListener("change", e => markGen(e.target, "objective", e.target.value));
+$("run").addEventListener("click", run);
+$("alts").addEventListener("click", runAlts);
+$("reset").addEventListener("click", loadExample);
+$("apply").addEventListener("click", () => {
+  try { spec = JSON.parse($("json").value); }
+  catch (e) { $("out").replaceChildren(el("div", {className: "errors", textContent: "JSON parse error: " + e.message})); return; }
+  // A structurally broken spec may not fit the form; the server explains what is wrong.
+  try { render(); } catch (e) { /* form cannot display it; fall through to server-side validation */ }
+  run();
+});
+loadExample();
+</script>
+</body>
+</html>

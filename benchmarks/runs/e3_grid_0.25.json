@@ -1,0 +1,93 @@
+{
+ "meta": {
+  "name": "e3_grid_0.25",
+  "note": "E3 diagnostic: coarser grid 0.25 m (stricter than 0.1: a layout found is valid, a failure proves nothing)",
+  "method": "cpsat",
+  "generator_overrides": {
+   "grid_m": 0.25
+  },
+  "repeat": 1,
+  "python": "3.13.16",
+  "ortools": "9.15.6755",
+  "cpu_count": 2,
+  "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+  "specs": "benchmarks/specs (see MANIFEST.json; 'specs' is a RECONSTRUCTION of the original benchmark inputs)",
+  "started": "2026-10-11 07:59:46 +0000",
+  "seeds": null,
+  "finished": "2026-10-11 07:59:46 +0000"
+ },
+ "rows": [
+  {
+   "index": 15,
+   "case": "random n=12 30x24 seed=7",
+   "generation": "infeasible_on_grid",
+   "validator": "FAIL",
+   "solver_status": "INFEASIBLE",
+   "raw_status": "EMPTY_DOMAIN",
+   "wall_s": 0.003,
+   "solve_s": null,
+   "objective_value": null,
+   "best_objective_bound": null,
+   "table_rows": null,
+   "layout_hash": null,
+   "metrics": null,
+   "failed_rules": null,
+   "rep": 0,
+   "seed": 1
+  },
+  {
+   "index": 20,
+   "case": "random n=20 36x24 seed=12",
+   "generation": "infeasible_on_grid",
+   "validator": "FAIL",
+   "solver_status": "INFEASIBLE",
+   "raw_status": "EMPTY_DOMAIN",
+   "wall_s": 0.002,
+   "solve_s": null,
+   "objective_value": null,
+   "best_objective_bound": null,
+   "table_rows": null,
+   "layout_hash": null,
+   "metrics": null,
+   "failed_rules": null,
+   "rep": 0,
+   "seed": 1
+  },
+  {
+   "index": 21,
+   "case": "random n=30 30x24 seed=13",
+   "generation": "infeasible_on_grid",
+   "validator": "FAIL",
+   "solver_status": "INFEASIBLE",
+   "raw_status": "EMPTY_DOMAIN",
+   "wall_s": 0.002,
+   "solve_s": null,
+   "objective_value": null,
+   "best_objective_bound": null,
+   "table_rows": null,
+   "layout_hash": null,
+   "metrics": null,
+   "failed_rules": null,
+   "rep": 0,
+   "seed": 1
+  },
+  {
+   "index": 22,
+   "case": "random n=30 30x24 seed=14",
+   "generation": "infeasible_on_grid",
+   "validator": "FAIL",
+   "solver_status": "INFEASIBLE",
+   "raw_status": "EMPTY_DOMAIN",
+   "wall_s": 0.002,
+   "solve_s": null,
+   "objective_value": null,
+   "best_objective_bound": null,
+   "table_rows": null,
+   "layout_hash": null,
+   "metrics": null,
+   "failed_rules": null,
+   "rep": 0,
+   "seed": 1
+  }
+ ]
+}

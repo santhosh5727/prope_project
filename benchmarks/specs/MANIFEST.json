@@ -1,0 +1,143 @@
+{
+ "provenance": "RECONSTRUCTED from compare_generators.cases() on 2026-10-11; the original run did not save its specs",
+ "specs": [
+  {
+   "index": 0,
+   "case": "demo 24x16 (chain adjacency)",
+   "file": "00_demo_24x16_chain_adjacency.json",
+   "sha256": "14f3499285dab3681077db9af15693a5b1ea2ddb985fabb20ea509be3abcd844"
+  },
+  {
+   "index": 1,
+   "case": "demo 30x16",
+   "file": "01_demo_30x16.json",
+   "sha256": "90031771d0a2f6aac1773543d1fd7ed7629106c7331c1aa9f9d741e984194b35"
+  },
+  {
+   "index": 2,
+   "case": "demo 33x16",
+   "file": "02_demo_33x16.json",
+   "sha256": "9e1d9dacab5802401c7d43d318242efe3932c566d7f8b453913b6cdf873c5bc6"
+  },
+  {
+   "index": 3,
+   "case": "demo 19x16 (tight)",
+   "file": "03_demo_19x16_tight.json",
+   "sha256": "955be51c6cde73df63dabcdacdce151d8aba933d399502ed8e64dc6461bdb166"
+  },
+  {
+   "index": 4,
+   "case": "demo 18x16 (288 m2 < 290.08 m2 minimum)",
+   "file": "04_demo_18x16_288_m2_290_08_m2_minimum.json",
+   "sha256": "18a0845e946054391dffcc57584634016de5cf62c3c5582b87bb291ae9e871b9"
+  },
+  {
+   "index": 5,
+   "case": "demo 24x16, min shared wall 50 m",
+   "file": "05_demo_24x16_min_shared_wall_50_m.json",
+   "sha256": "e31f6ac9b8d6d227f18bce353dabbdae29b117c018332349adff87a740727455"
+  },
+  {
+   "index": 6,
+   "case": "K4 adjacency on a 2x2 block (impossible)",
+   "file": "06_k4_adjacency_on_a_2x2_block_impossible.json",
+   "sha256": "ea0a1ef61078b2621b189241631f7c259061412747d9825d443df912594d36a8"
+  },
+  {
+   "index": 7,
+   "case": "101 m2 of rooms in 100 m2 (needs -2 % tolerance)",
+   "file": "07_101_m2_of_rooms_in_100_m2_needs_2_tolera.json",
+   "sha256": "28df3704a612e789a13d2ef928e50f8e106b8b53d0dfe67a97b15dbb3fdcd279"
+  },
+  {
+   "index": 8,
+   "case": "8.9 m2 room, 3 m min dim (needs +1.1 %)",
+   "file": "08_8_9_m2_room_3_m_min_dim_needs_1_1.json",
+   "sha256": "c82122c76e08c665861793dee0c1ecba7c3fc2a8c4bb4b9a2ec34428dddcbc93"
+  },
+  {
+   "index": 9,
+   "case": "random n=8 24x16 seed=1",
+   "file": "09_random_n_8_24x16_seed_1.json",
+   "sha256": "0f0ed93ac217a16f01aaa9831256f65461260223b2805137c7b3155df645a4cb"
+  },
+  {
+   "index": 10,
+   "case": "random n=8 24x16 seed=2",
+   "file": "10_random_n_8_24x16_seed_2.json",
+   "sha256": "e9af8cab0ebbb77df0615b4573c8623795b6bba9614ecea00065f399b698d744"
+  },
+  {
+   "index": 11,
+   "case": "random n=8 24x16 seed=3",
+   "file": "11_random_n_8_24x16_seed_3.json",
+   "sha256": "570d18f5d9d45d43991692de4864f8552fd30b590b905e980ab8cc4de58951bb"
+  },
+  {
+   "index": 12,
+   "case": "random n=8 24x16 seed=4",
+   "file": "12_random_n_8_24x16_seed_4.json",
+   "sha256": "94b23673dc303ea8d8c7848662b954c48fa7fdafc21affbc0eccb4971714b7c8"
+  },
+  {
+   "index": 13,
+   "case": "random n=12 30x24 seed=5",
+   "file": "13_random_n_12_30x24_seed_5.json",
+   "sha256": "4199a37e822a2ab1a2701d614b93b591d47cb0f590e3a8800d1400caa7a7ee24"
+  },
+  {
+   "index": 14,
+   "case": "random n=12 30x24 seed=6",
+   "file": "14_random_n_12_30x24_seed_6.json",
+   "sha256": "a5bb4d3bb20bab93d95319965d4bb819034bd55e0a2a2df6304ed9cc028cfb54"
+  },
+  {
+   "index": 15,
+   "case": "random n=12 30x24 seed=7",
+   "file": "15_random_n_12_30x24_seed_7.json",
+   "sha256": "c07066156c69425d4624e7ddf863ea29cac17a931ffe5b3cf2b57625383eff81"
+  },
+  {
+   "index": 16,
+   "case": "random n=12 30x24 seed=8",
+   "file": "16_random_n_12_30x24_seed_8.json",
+   "sha256": "254a36af8fe5bc4e3263b603e6cd1927786af20cd85cc16b8207d637103d7a39"
+  },
+  {
+   "index": 17,
+   "case": "random n=20 36x24 seed=9",
+   "file": "17_random_n_20_36x24_seed_9.json",
+   "sha256": "091b2e8dada4c5df93ae81ea00671cfde872cbd823937701a792b74821a11459"
+  },
+  {
+   "index": 18,
+   "case": "random n=20 36x24 seed=10",
+   "file": "18_random_n_20_36x24_seed_10.json",
+   "sha256": "75f83049a190ad12e4b35f0544099cf1436cdcd2f146306fd69290ea861d4afb"
+  },
+  {
+   "index": 19,
+   "case": "random n=20 36x24 seed=11",
+   "file": "19_random_n_20_36x24_seed_11.json",
+   "sha256": "4ce32375cd8cadca98936ebe504a8db4c0e3c9e295311abb5a110b2b1586e640"
+  },
+  {
+   "index": 20,
+   "case": "random n=20 36x24 seed=12",
+   "file": "20_random_n_20_36x24_seed_12.json",
+   "sha256": "b4c49e56a1360378d6b2c3b15a95aeaffa3959c85ac367dad971e8631cc837a2"
+  },
+  {
+   "index": 21,
+   "case": "random n=30 30x24 seed=13",
+   "file": "21_random_n_30_30x24_seed_13.json",
+   "sha256": "b690a8b0b48a76c7d5579e510b8c6c21acaec1240dc4556d943ca1fde8d94afe"
+  },
+  {
+   "index": 22,
+   "case": "random n=30 30x24 seed=14",
+   "file": "22_random_n_30_30x24_seed_14.json",
+   "sha256": "d35a7cff7f5323cbe41cc593c8828ed1d7ddc4c45cbc6933199f0920d9cdab98"
+  }
+ ]
+}

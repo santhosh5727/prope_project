@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "python": "3.13.16",
+    "ortools": "9.15.6755",
+    "cpu_count": 2,
+    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+    "settings": "grid 0.1 m, objective feasibility, num_workers 1, seed 1, time_limit 20 s"
+  },
+  "rows": [
+    {
+      "case": "demo 24x16 (chain adjacency)",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "PASS",
+        "seconds": 0.176
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 1.952
+      }
+    },
+    {
+      "case": "demo 30x16",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.196
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 1.381
+      }
+    },
+    {
+      "case": "demo 33x16",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.22
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 2.135
+      }
+    },
+    {
+      "case": "demo 19x16 (tight)",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "PASS",
+        "seconds": 0.196
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 8.379
+      }
+    },
+    {
+      "case": "demo 18x16 (288 m2 < 290.08 m2 minimum)",
+      "heuristic": {
+        "generation": "infeasible",
+        "validator": "FAIL",
+        "seconds": 0.001
+      },
+      "cpsat": {
+        "generation": "infeasible",
+        "validator": "FAIL",
+        "solver_status": null,
+        "raw_status": null,
+        "seconds": 0.0
+      }
+    },
+    {
+      "case": "demo 24x16, min shared wall 50 m",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.179
+      },
+      "cpsat": {
+        "generation": "infeasible",
+        "validator": "FAIL",
+        "solver_status": null,
+        "raw_status": null,
+        "seconds": 0.0
+      }
+    },
+    {
+      "case": "K4 adjacency on a 2x2 block (impossible)",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.001
+      },
+      "cpsat": {
+        "generation": "infeasible_on_grid",
+        "validator": "FAIL",
+        "solver_status": "INFEASIBLE",
+        "raw_status": "INFEASIBLE",
+        "seconds": 0.015
+      }
+    },
+    {
+      "case": "101 m2 of rooms in 100 m2 (needs -2 % tolerance)",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "PASS",
+        "seconds": 0.0
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 0.022
+      }
+    },
+    {
+      "case": "8.9 m2 room, 3 m min dim (needs +1.1 %)",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.0
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 0.001
+      }
+    },
+    {
+      "case": "random n=8 24x16 seed=1",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.007
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 0.876
+      }
+    },
+    {
+      "case": "random n=8 24x16 seed=2",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.009
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 1.026
+      }
+    },
+    {
+      "case": "random n=8 24x16 seed=3",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.007
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 0.591
+      }
+    },
+    {
+      "case": "random n=8 24x16 seed=4",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.007
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 0.582
+      }
+    },
+    {
+      "case": "random n=12 30x24 seed=5",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.079
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 11.833
+      }
+    },
+    {
+      "case": "random n=12 30x24 seed=6",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.076
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 1.335
+      }
+    },
+    {
+      "case": "random n=12 30x24 seed=7",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.08
+      },
+      "cpsat": {
+        "generation": "unknown",
+        "validator": "FAIL",
+        "solver_status": "UNKNOWN",
+        "raw_status": "UNKNOWN",
+        "seconds": 20.006
+      }
+    },
+    {
+      "case": "random n=12 30x24 seed=8",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 0.1
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 1.173
+      }
+    },
+    {
+      "case": "random n=20 36x24 seed=9",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 1.348
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 11.89
+      }
+    },
+    {
+      "case": "random n=20 36x24 seed=10",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 1.451
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 5.71
+      }
+    },
+    {
+      "case": "random n=20 36x24 seed=11",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 1.274
+      },
+      "cpsat": {
+        "generation": "placed",
+        "validator": "PASS",
+        "solver_status": "FEASIBLE",
+        "raw_status": "OPTIMAL",
+        "seconds": 7.259
+      }
+    },
+    {
+      "case": "random n=20 36x24 seed=12",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 1.38
+      },
+      "cpsat": {
+        "generation": "unknown",
+        "validator": "FAIL",
+        "solver_status": "UNKNOWN",
+        "raw_status": "UNKNOWN",
+        "seconds": 20.014
+      }
+    },
+    {
+      "case": "random n=30 30x24 seed=13",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 1.952
+      },
+      "cpsat": {
+        "generation": "unknown",
+        "validator": "FAIL",
+        "solver_status": "UNKNOWN",
+        "raw_status": "UNKNOWN",
+        "seconds": 20.036
+      }
+    },
+    {
+      "case": "random n=30 30x24 seed=14",
+      "heuristic": {
+        "generation": "placed",
+        "validator": "FAIL",
+        "seconds": 1.907
+      },
+      "cpsat": {
+        "generation": "unknown",
+        "validator": "FAIL",
+        "solver_status": "UNKNOWN",
+        "raw_status": "UNKNOWN",
+        "seconds": 20.012
+      }
+    }
+  ]
+}
